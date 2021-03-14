@@ -202,8 +202,9 @@ public class BasicTypeArrayUtil {
      * @return 新数组
      */
     public static int[] resize(int[] array, int newSize) {
-        if (newSize < 0)
+        if (newSize < 0) {
             return array;
+        }
         final int[] newArray = new int[newSize];
         if (newSize > 0 && isNotEmpty(array)) {
             System.arraycopy(array, 0, newArray, 0, Math.min(array.length, newSize));
@@ -219,8 +220,9 @@ public class BasicTypeArrayUtil {
      * @return 新数组
      */
     public static short[] resize(short[] array, int newSize) {
-        if (newSize < 0)
+        if (newSize < 0) {
             return array;
+        }
         final short[] newArray = new short[newSize];
         if (newSize > 0 && isNotEmpty(array)) {
             System.arraycopy(array, 0, newArray, 0, Math.min(array.length, newSize));
@@ -236,8 +238,9 @@ public class BasicTypeArrayUtil {
      * @return 新数组
      */
     public static long[] resize(long[] array, int newSize) {
-        if (newSize < 0)
+        if (newSize < 0) {
             return array;
+        }
         final long[] newArray = new long[newSize];
         if (newSize > 0 && isNotEmpty(array)) {
             System.arraycopy(array, 0, newArray, 0, Math.min(array.length, newSize));
@@ -253,8 +256,9 @@ public class BasicTypeArrayUtil {
      * @return 新数组
      */
     public static float[] resize(float[] array, int newSize) {
-        if (newSize < 0)
+        if (newSize < 0) {
             return array;
+        }
         final float[] newArray = new float[newSize];
         if (newSize > 0 && isNotEmpty(array)) {
             System.arraycopy(array, 0, newArray, 0, Math.min(array.length, newSize));
@@ -270,8 +274,9 @@ public class BasicTypeArrayUtil {
      * @return 新数组
      */
     public static double[] resize(double[] array, int newSize) {
-        if (newSize < 0)
+        if (newSize < 0) {
             return array;
+        }
         final double[] newArray = new double[newSize];
         if (newSize > 0 && isNotEmpty(array)) {
             System.arraycopy(array, 0, newArray, 0, Math.min(array.length, newSize));
@@ -287,8 +292,9 @@ public class BasicTypeArrayUtil {
      * @return 新数组
      */
     public static byte[] resize(byte[] array, int newSize) {
-        if (newSize < 0)
+        if (newSize < 0) {
             return array;
+        }
         final byte[] newArray = new byte[newSize];
         if (newSize > 0 && isNotEmpty(array)) {
             System.arraycopy(array, 0, newArray, 0, Math.min(array.length, newSize));
@@ -304,8 +310,9 @@ public class BasicTypeArrayUtil {
      * @return 新数组
      */
     public static char[] resize(char[] array, int newSize) {
-        if (newSize < 0)
+        if (newSize < 0) {
             return array;
+        }
         final char[] newArray = new char[newSize];
         if (newSize > 0 && isNotEmpty(array)) {
             System.arraycopy(array, 0, newArray, 0, Math.min(array.length, newSize));
@@ -321,8 +328,9 @@ public class BasicTypeArrayUtil {
      * @return 新数组
      */
     public static boolean[] resize(boolean[] array, int newSize) {
-        if (newSize < 0)
+        if (newSize < 0) {
             return array;
+        }
         final boolean[] newArray = new boolean[newSize];
         if (newSize > 0 && isNotEmpty(array)) {
             System.arraycopy(array, 0, newArray, 0, Math.min(array.length, newSize));
@@ -342,8 +350,9 @@ public class BasicTypeArrayUtil {
      * @return 合并后新数组
      */
     public static int[] addAll(int[]... arrays) {
-        if (arrays.length == 1)
+        if (arrays.length == 1) {
             return arrays[0];
+        }
         int len = 0;
         for (int[] array : arrays) {
             if (array != null) {
@@ -368,8 +377,9 @@ public class BasicTypeArrayUtil {
      * @return 合并后新数组
      */
     public static short[] addAll(short[]... arrays) {
-        if (arrays.length == 1)
+        if (arrays.length == 1) {
             return arrays[0];
+        }
         int len = 0;
         for (short[] array : arrays) {
             if (array != null) {
@@ -394,8 +404,9 @@ public class BasicTypeArrayUtil {
      * @return 合并后新数组
      */
     public static long[] addAll(long[]... arrays) {
-        if (arrays.length == 1)
+        if (arrays.length == 1) {
             return arrays[0];
+        }
         int len = 0;
         for (long[] array : arrays) {
             if (array != null) {
@@ -420,8 +431,9 @@ public class BasicTypeArrayUtil {
      * @return 合并后新数组
      */
     public static float[] addAll(float[]... arrays) {
-        if (arrays.length == 1)
+        if (arrays.length == 1) {
             return arrays[0];
+        }
         int len = 0;
         for (float[] array : arrays) {
             if (array != null) {
@@ -446,8 +458,9 @@ public class BasicTypeArrayUtil {
      * @return 合并后新数组
      */
     public static double[] addAll(double[]... arrays) {
-        if (arrays.length == 1)
+        if (arrays.length == 1) {
             return arrays[0];
+        }
         int len = 0;
         for (double[] array : arrays) {
             if (array != null) {
@@ -472,8 +485,9 @@ public class BasicTypeArrayUtil {
      * @return 合并后新数组
      */
     public static byte[] addAll(byte[]... arrays) {
-        if (arrays.length == 1)
+        if (arrays.length == 1) {
             return arrays[0];
+        }
         int len = 0;
         for (byte[] array : arrays) {
             if (array != null) {
@@ -498,8 +512,9 @@ public class BasicTypeArrayUtil {
      * @return 合并后新数组
      */
     public static char[] addAll(char[]... arrays) {
-        if (arrays.length == 1)
+        if (arrays.length == 1) {
             return arrays[0];
+        }
         int len = 0;
         for (char[] array : arrays) {
             if (array != null) {
@@ -524,8 +539,9 @@ public class BasicTypeArrayUtil {
      * @return 合并后新数组
      */
     public static boolean[] addAll(boolean[]... arrays) {
-        if (arrays.length == 1)
+        if (arrays.length == 1) {
             return arrays[0];
+        }
         int len = 0;
         for (boolean[] array : arrays) {
             if (array != null) {
@@ -582,8 +598,9 @@ public class BasicTypeArrayUtil {
             start = end;
             end = temp;
         }
-        if (step <= 0)
+        if (step <= 0) {
             step = 1;
+        }
         int deviation = end - start;
         int len = deviation / step;
         if (deviation % step != 0) {
@@ -612,8 +629,9 @@ public class BasicTypeArrayUtil {
         int x = array.length / len;
         int y = array.length % len;
         int z = 0;
-        if (y != 0)
+        if (y != 0) {
             z = 1;
+        }
         int[][] arrays = new int[x + z][];
         int[] arr;
         for (int i = 0; i < x + z; i++) {
@@ -639,8 +657,9 @@ public class BasicTypeArrayUtil {
         int x = array.length / len;
         int y = array.length % len;
         int z = 0;
-        if (y != 0)
+        if (y != 0) {
             z = 1;
+        }
         short[][] arrays = new short[x + z][];
         short[] arr;
         for (int i = 0; i < x + z; i++) {
@@ -666,8 +685,9 @@ public class BasicTypeArrayUtil {
         int x = array.length / len;
         int y = array.length % len;
         int z = 0;
-        if (y != 0)
+        if (y != 0) {
             z = 1;
+        }
         long[][] arrays = new long[x + z][];
         long[] arr;
         for (int i = 0; i < x + z; i++) {
@@ -693,8 +713,9 @@ public class BasicTypeArrayUtil {
         int x = array.length / len;
         int y = array.length % len;
         int z = 0;
-        if (y != 0)
+        if (y != 0) {
             z = 1;
+        }
         float[][] arrays = new float[x + z][];
         float[] arr;
         for (int i = 0; i < x + z; i++) {
@@ -720,8 +741,9 @@ public class BasicTypeArrayUtil {
         int x = array.length / len;
         int y = array.length % len;
         int z = 0;
-        if (y != 0)
+        if (y != 0) {
             z = 1;
+        }
         double[][] arrays = new double[x + z][];
         double[] arr;
         for (int i = 0; i < x + z; i++) {
@@ -747,8 +769,9 @@ public class BasicTypeArrayUtil {
         int x = array.length / len;
         int y = array.length % len;
         int z = 0;
-        if (y != 0)
+        if (y != 0) {
             z = 1;
+        }
         byte[][] arrays = new byte[x + z][];
         byte[] arr;
         for (int i = 0; i < x + z; i++) {
@@ -774,8 +797,9 @@ public class BasicTypeArrayUtil {
         int x = array.length / len;
         int y = array.length % len;
         int z = 0;
-        if (y != 0)
+        if (y != 0) {
             z = 1;
+        }
         char[][] arrays = new char[x + z][];
         char[] arr;
         for (int i = 0; i < x + z; i++) {
@@ -801,8 +825,9 @@ public class BasicTypeArrayUtil {
         int x = array.length / len;
         int y = array.length % len;
         int z = 0;
-        if (y != 0)
+        if (y != 0) {
             z = 1;
+        }
         boolean[][] arrays = new boolean[x + z][];
         boolean[] arr;
         for (int i = 0; i < x + z; i++) {
@@ -833,8 +858,9 @@ public class BasicTypeArrayUtil {
     public static int indexOf(int[] array, int value) {
         if (isNotEmpty(array)) {
             for (int i = 0; i < array.length; i++) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -851,8 +877,9 @@ public class BasicTypeArrayUtil {
     public static int indexOf(short[] array, short value) {
         if (isNotEmpty(array)) {
             for (int i = 0; i < array.length; i++) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -869,8 +896,9 @@ public class BasicTypeArrayUtil {
     public static int indexOf(long[] array, long value) {
         if (isNotEmpty(array)) {
             for (int i = 0; i < array.length; i++) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -887,8 +915,9 @@ public class BasicTypeArrayUtil {
     public static int indexOf(float[] array, float value) {
         if (isNotEmpty(array)) {
             for (int i = 0; i < array.length; i++) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -905,8 +934,9 @@ public class BasicTypeArrayUtil {
     public static int indexOf(double[] array, double value) {
         if (isNotEmpty(array)) {
             for (int i = 0; i < array.length; i++) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -923,8 +953,9 @@ public class BasicTypeArrayUtil {
     public static int indexOf(byte[] array, byte value) {
         if (isNotEmpty(array)) {
             for (int i = 0; i < array.length; i++) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -941,8 +972,9 @@ public class BasicTypeArrayUtil {
     public static int indexOf(char[] array, char value) {
         if (isNotEmpty(array)) {
             for (int i = 0; i < array.length; i++) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -959,8 +991,9 @@ public class BasicTypeArrayUtil {
     public static int indexOf(boolean[] array, boolean value) {
         if (isNotEmpty(array)) {
             for (int i = 0; i < array.length; i++) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -982,8 +1015,9 @@ public class BasicTypeArrayUtil {
     public static int lastIndexOf(int[] array, int value) {
         if (isNotEmpty(array)) {
             for (int i = array.length - 1; i >= 0; i--) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -1000,8 +1034,9 @@ public class BasicTypeArrayUtil {
     public static int lastIndexOf(short[] array, short value) {
         if (isNotEmpty(array)) {
             for (int i = array.length - 1; i >= 0; i--) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -1018,8 +1053,9 @@ public class BasicTypeArrayUtil {
     public static int lastIndexOf(long[] array, long value) {
         if (isNotEmpty(array)) {
             for (int i = array.length - 1; i >= 0; i--) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -1036,8 +1072,9 @@ public class BasicTypeArrayUtil {
     public static int lastIndexOf(float[] array, float value) {
         if (isNotEmpty(array)) {
             for (int i = array.length - 1; i >= 0; i--) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -1054,8 +1091,9 @@ public class BasicTypeArrayUtil {
     public static int lastIndexOf(double[] array, double value) {
         if (isNotEmpty(array)) {
             for (int i = array.length - 1; i >= 0; i--) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -1072,8 +1110,9 @@ public class BasicTypeArrayUtil {
     public static int lastIndexOf(byte[] array, byte value) {
         if (isNotEmpty(array)) {
             for (int i = array.length - 1; i >= 0; i--) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -1090,8 +1129,9 @@ public class BasicTypeArrayUtil {
     public static int lastIndexOf(char[] array, char value) {
         if (isNotEmpty(array)) {
             for (int i = array.length - 1; i >= 0; i--) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -1108,8 +1148,9 @@ public class BasicTypeArrayUtil {
     public static int lastIndexOf(boolean[] array, boolean value) {
         if (isNotEmpty(array)) {
             for (int i = array.length - 1; i >= 0; i--) {
-                if (value == array[i])
+                if (value == array[i]) {
                     return i;
+                }
             }
         }
         return INDEX_OVER;
@@ -1222,15 +1263,19 @@ public class BasicTypeArrayUtil {
      * @return 子数组
      */
     public static int[] subArray(int[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int len = array.length;
-        if (start < 0)
+        if (start < 0) {
             start += len;
-        if (end < 0)
+        }
+        if (end < 0) {
             end += len;
-        if (start == len)
+        }
+        if (start == len) {
             return new int[0];
+        }
         if (start > end) {
             int temp = start;
             start = end;
@@ -1254,15 +1299,19 @@ public class BasicTypeArrayUtil {
      * @return 子数组
      */
     public static short[] subArray(short[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int len = array.length;
-        if (start < 0)
+        if (start < 0) {
             start += len;
-        if (end < 0)
+        }
+        if (end < 0) {
             end += len;
-        if (start == len)
+        }
+        if (start == len) {
             return new short[0];
+        }
         if (start > end) {
             int temp = start;
             start = end;
@@ -1286,15 +1335,19 @@ public class BasicTypeArrayUtil {
      * @return 子数组
      */
     public static long[] subArray(long[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int len = array.length;
-        if (start < 0)
+        if (start < 0) {
             start += len;
-        if (end < 0)
+        }
+        if (end < 0) {
             end += len;
-        if (start == len)
+        }
+        if (start == len) {
             return new long[0];
+        }
         if (start > end) {
             int temp = start;
             start = end;
@@ -1318,15 +1371,19 @@ public class BasicTypeArrayUtil {
      * @return 子数组
      */
     public static float[] subArray(float[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int len = array.length;
-        if (start < 0)
+        if (start < 0) {
             start += len;
-        if (end < 0)
+        }
+        if (end < 0) {
             end += len;
-        if (start == len)
+        }
+        if (start == len) {
             return new float[0];
+        }
         if (start > end) {
             int temp = start;
             start = end;
@@ -1350,15 +1407,19 @@ public class BasicTypeArrayUtil {
      * @return 子数组
      */
     public static double[] subArray(double[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int len = array.length;
-        if (start < 0)
+        if (start < 0) {
             start += len;
-        if (end < 0)
+        }
+        if (end < 0) {
             end += len;
-        if (start == len)
+        }
+        if (start == len) {
             return new double[0];
+        }
         if (start > end) {
             int temp = start;
             start = end;
@@ -1382,15 +1443,19 @@ public class BasicTypeArrayUtil {
      * @return 子数组
      */
     public static byte[] subArray(byte[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int len = array.length;
-        if (start < 0)
+        if (start < 0) {
             start += len;
-        if (end < 0)
+        }
+        if (end < 0) {
             end += len;
-        if (start == len)
+        }
+        if (start == len) {
             return new byte[0];
+        }
         if (start > end) {
             int temp = start;
             start = end;
@@ -1414,15 +1479,19 @@ public class BasicTypeArrayUtil {
      * @return 子数组
      */
     public static char[] subArray(char[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int len = array.length;
-        if (start < 0)
+        if (start < 0) {
             start += len;
-        if (end < 0)
+        }
+        if (end < 0) {
             end += len;
-        if (start == len)
+        }
+        if (start == len) {
             return new char[0];
+        }
         if (start > end) {
             int temp = start;
             start = end;
@@ -1446,15 +1515,19 @@ public class BasicTypeArrayUtil {
      * @return 子数组
      */
     public static boolean[] subArray(boolean[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int len = array.length;
-        if (start < 0)
+        if (start < 0) {
             start += len;
-        if (end < 0)
+        }
+        if (end < 0) {
             end += len;
-        if (start == len)
+        }
+        if (start == len) {
             return new boolean[0];
+        }
         if (start > end) {
             int temp = start;
             start = end;
@@ -1483,8 +1556,9 @@ public class BasicTypeArrayUtil {
      * @return 交换后数组（等价于参数array）
      */
     public static int[] swap(int[] array, int index1, int index2) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
@@ -1500,8 +1574,9 @@ public class BasicTypeArrayUtil {
      * @return 交换后数组（等价于参数array）
      */
     public static short[] swap(short[] array, int index1, int index2) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         short temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
@@ -1517,8 +1592,9 @@ public class BasicTypeArrayUtil {
      * @return 交换后数组（等价于参数array）
      */
     public static long[] swap(long[] array, int index1, int index2) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         long temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
@@ -1534,8 +1610,9 @@ public class BasicTypeArrayUtil {
      * @return 交换后数组（等价于参数array）
      */
     public static float[] swap(float[] array, int index1, int index2) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         float temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
@@ -1551,8 +1628,9 @@ public class BasicTypeArrayUtil {
      * @return 交换后数组（等价于参数array）
      */
     public static double[] swap(double[] array, int index1, int index2) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         double temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
@@ -1568,8 +1646,9 @@ public class BasicTypeArrayUtil {
      * @return 交换后数组（等价于参数array）
      */
     public static byte[] swap(byte[] array, int index1, int index2) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         byte temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
@@ -1585,8 +1664,9 @@ public class BasicTypeArrayUtil {
      * @return 交换后数组（等价于参数array）
      */
     public static char[] swap(char[] array, int index1, int index2) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         char temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
@@ -1602,8 +1682,9 @@ public class BasicTypeArrayUtil {
      * @return 交换后数组（等价于参数array）
      */
     public static boolean[] swap(boolean[] array, int index1, int index2) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         boolean temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
@@ -1624,8 +1705,9 @@ public class BasicTypeArrayUtil {
      * @return 反转后数组
      */
     public static int[] reverse(int[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int i = Math.max(start, 0);
         int j = Math.min(array.length, end) - 1;
         while (j > i) {
@@ -1645,8 +1727,9 @@ public class BasicTypeArrayUtil {
      * @return 反转后数组
      */
     public static short[] reverse(short[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int i = Math.max(start, 0);
         int j = Math.min(array.length, end) - 1;
         while (j > i) {
@@ -1666,8 +1749,9 @@ public class BasicTypeArrayUtil {
      * @return 反转后数组
      */
     public static long[] reverse(long[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int i = Math.max(start, 0);
         int j = Math.min(array.length, end) - 1;
         while (j > i) {
@@ -1687,8 +1771,9 @@ public class BasicTypeArrayUtil {
      * @return 反转后数组
      */
     public static float[] reverse(float[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int i = Math.max(start, 0);
         int j = Math.min(array.length, end) - 1;
         while (j > i) {
@@ -1708,8 +1793,9 @@ public class BasicTypeArrayUtil {
      * @return 反转后数组
      */
     public static double[] reverse(double[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int i = Math.max(start, 0);
         int j = Math.min(array.length, end) - 1;
         while (j > i) {
@@ -1729,8 +1815,9 @@ public class BasicTypeArrayUtil {
      * @return 反转后数组
      */
     public static byte[] reverse(byte[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int i = Math.max(start, 0);
         int j = Math.min(array.length, end) - 1;
         while (j > i) {
@@ -1750,8 +1837,9 @@ public class BasicTypeArrayUtil {
      * @return 反转后数组
      */
     public static char[] reverse(char[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int i = Math.max(start, 0);
         int j = Math.min(array.length, end) - 1;
         while (j > i) {
@@ -1771,8 +1859,9 @@ public class BasicTypeArrayUtil {
      * @return 反转后数组
      */
     public static boolean[] reverse(boolean[] array, int start, int end) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             return array;
+        }
         int i = Math.max(start, 0);
         int j = Math.min(array.length, end) - 1;
         while (j > i) {
@@ -1880,8 +1969,9 @@ public class BasicTypeArrayUtil {
      * @return 最小值
      */
     public static int min(int[] array) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             throw new IllegalArgumentException("Number array must not empty!");
+        }
         int min = array[0];
         for (int i = 1; i < array.length; i++) {
             if (min > array[i]) {
@@ -1898,8 +1988,9 @@ public class BasicTypeArrayUtil {
      * @return 最小值
      */
     public static short min(short[] array) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             throw new IllegalArgumentException("Number array must not empty!");
+        }
         short min = array[0];
         for (int i = 1; i < array.length; i++) {
             if (min > array[i]) {
@@ -1916,8 +2007,9 @@ public class BasicTypeArrayUtil {
      * @return 最小值
      */
     public static long min(long[] array) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             throw new IllegalArgumentException("Number array must not empty!");
+        }
         long min = array[0];
         for (int i = 1; i < array.length; i++) {
             if (min > array[i]) {
@@ -1934,8 +2026,9 @@ public class BasicTypeArrayUtil {
      * @return 最小值
      */
     public static float min(float[] array) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             throw new IllegalArgumentException("Number array must not empty!");
+        }
         float min = array[0];
         for (int i = 1; i < array.length; i++) {
             if (min > array[i]) {
@@ -1952,8 +2045,9 @@ public class BasicTypeArrayUtil {
      * @return 最小值
      */
     public static double min(double[] array) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             throw new IllegalArgumentException("Number array must not empty!");
+        }
         double min = array[0];
         for (int i = 1; i < array.length; i++) {
             if (min > array[i]) {
@@ -1970,8 +2064,9 @@ public class BasicTypeArrayUtil {
      * @return 最小值
      */
     public static byte min(byte[] array) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             throw new IllegalArgumentException("Number array must not empty!");
+        }
         byte min = array[0];
         for (int i = 1; i < array.length; i++) {
             if (min > array[i]) {
@@ -1988,8 +2083,9 @@ public class BasicTypeArrayUtil {
      * @return 最小值
      */
     public static char min(char[] array) {
-        if (isEmpty(array))
+        if (isEmpty(array)) {
             throw new IllegalArgumentException("Number array must not empty!");
+        }
         char min = array[0];
         for (int i = 1; i < array.length; i++) {
             if (min > array[i]) {
@@ -2010,9 +2106,10 @@ public class BasicTypeArrayUtil {
      * @param array 数字数组
      * @return 最大值
      */
-    public static int max(int[] array){
-        if (isEmpty(array))
+    public static int max(int[] array) {
+        if (isEmpty(array)) {
             throw new IllegalArgumentException("Number array must not empty!");
+        }
         int max = array[0];
         for (int i = 1; i < array.length; i++) {
             if (max < array[i]) {
@@ -2028,9 +2125,10 @@ public class BasicTypeArrayUtil {
      * @param array 数字数组
      * @return 最大值
      */
-    public static short max(short[] array){
-        if (isEmpty(array))
+    public static short max(short[] array) {
+        if (isEmpty(array)) {
             throw new IllegalArgumentException("Number array must not empty!");
+        }
         short max = array[0];
         for (int i = 1; i < array.length; i++) {
             if (max < array[i]) {
@@ -2046,9 +2144,10 @@ public class BasicTypeArrayUtil {
      * @param array 数字数组
      * @return 最大值
      */
-    public static long max(long[] array){
-        if (isEmpty(array))
+    public static long max(long[] array) {
+        if (isEmpty(array)) {
             throw new IllegalArgumentException("Number array must not empty!");
+        }
         long max = array[0];
         for (int i = 1; i < array.length; i++) {
             if (max < array[i]) {
@@ -2064,9 +2163,10 @@ public class BasicTypeArrayUtil {
      * @param array 数字数组
      * @return 最大值
      */
-    public static float max(float[] array){
-        if (isEmpty(array))
+    public static float max(float[] array) {
+        if (isEmpty(array)) {
             throw new IllegalArgumentException("Number array must not empty!");
+        }
         float max = array[0];
         for (int i = 1; i < array.length; i++) {
             if (max < array[i]) {
@@ -2082,9 +2182,10 @@ public class BasicTypeArrayUtil {
      * @param array 数字数组
      * @return 最大值
      */
-    public static double max(double[] array){
-        if (isEmpty(array))
+    public static double max(double[] array) {
+        if (isEmpty(array)) {
             throw new IllegalArgumentException("Number array must not empty!");
+        }
         double max = array[0];
         for (int i = 1; i < array.length; i++) {
             if (max < array[i]) {
@@ -2100,9 +2201,10 @@ public class BasicTypeArrayUtil {
      * @param array 数字数组
      * @return 最大值
      */
-    public static byte max(byte[] array){
-        if (isEmpty(array))
+    public static byte max(byte[] array) {
+        if (isEmpty(array)) {
             throw new IllegalArgumentException("Number array must not empty!");
+        }
         byte max = array[0];
         for (int i = 1; i < array.length; i++) {
             if (max < array[i]) {
@@ -2118,9 +2220,10 @@ public class BasicTypeArrayUtil {
      * @param array 数字数组
      * @return 最大值
      */
-    public static char max(char[] array){
-        if (isEmpty(array))
+    public static char max(char[] array) {
+        if (isEmpty(array)) {
             throw new IllegalArgumentException("Number array must not empty!");
+        }
         char max = array[0];
         for (int i = 1; i < array.length; i++) {
             if (max < array[i]) {
@@ -2128,5 +2231,269 @@ public class BasicTypeArrayUtil {
             }
         }
         return max;
+    }
+
+    /*
+    isSortedASC Method(array)
+    检查数组是否升序
+    空数组返回false
+     */
+
+    /**
+     * 检查数组是否满足升序条件
+     *
+     * @param array 被检查数组
+     * @return 是否升序，空数组返回false
+     */
+    public static boolean isSortedASC(int[] array) {
+        if (isEmpty(array)) {
+            return false;
+        }
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 检查数组是否满足升序条件
+     *
+     * @param array 被检查数组
+     * @return 是否升序，空数组返回false
+     */
+    public static boolean isSortedASC(short[] array) {
+        if (isEmpty(array)) {
+            return false;
+        }
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 检查数组是否满足升序条件
+     *
+     * @param array 被检查数组
+     * @return 是否升序，空数组返回false
+     */
+    public static boolean isSortedASC(long[] array) {
+        if (isEmpty(array)) {
+            return false;
+        }
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 检查数组是否满足升序条件
+     *
+     * @param array 被检查数组
+     * @return 是否升序，空数组返回false
+     */
+    public static boolean isSortedASC(float[] array) {
+        if (isEmpty(array)) {
+            return false;
+        }
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 检查数组是否满足升序条件
+     *
+     * @param array 被检查数组
+     * @return 是否升序，空数组返回false
+     */
+    public static boolean isSortedASC(double[] array) {
+        if (isEmpty(array)) {
+            return false;
+        }
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 检查数组是否满足升序条件
+     *
+     * @param array 被检查数组
+     * @return 是否升序，空数组返回false
+     */
+    public static boolean isSortedASC(byte[] array) {
+        if (isEmpty(array)) {
+            return false;
+        }
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 检查数组是否满足升序条件
+     *
+     * @param array 被检查数组
+     * @return 是否升序，空数组返回false
+     */
+    public static boolean isSortedASC(char[] array) {
+        if (isEmpty(array)) {
+            return false;
+        }
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /*
+    isSortedDESC Method
+    检查数组是否满足降序条件
+    空数组返回false
+     */
+
+    /**
+     * 检查数组是否满足降序条件
+     *
+     * @param array 被检查数组
+     * @return 是否降序，空数组返回false
+     */
+    public static boolean isSortedDESC(int[] array) {
+        if (isEmpty(array)) {
+            return false;
+        }
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] < array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 检查数组是否满足降序条件
+     *
+     * @param array 被检查数组
+     * @return 是否降序，空数组返回false
+     */
+    public static boolean isSortedDESC(short[] array) {
+        if (isEmpty(array)) {
+            return false;
+        }
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] < array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 检查数组是否满足降序条件
+     *
+     * @param array 被检查数组
+     * @return 是否降序，空数组返回false
+     */
+    public static boolean isSortedDESC(long[] array) {
+        if (isEmpty(array)) {
+            return false;
+        }
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] < array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 检查数组是否满足降序条件
+     *
+     * @param array 被检查数组
+     * @return 是否降序，空数组返回false
+     */
+    public static boolean isSortedDESC(float[] array) {
+        if (isEmpty(array)) {
+            return false;
+        }
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] < array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 检查数组是否满足降序条件
+     *
+     * @param array 被检查数组
+     * @return 是否降序，空数组返回false
+     */
+    public static boolean isSortedDESC(double[] array) {
+        if (isEmpty(array)) {
+            return false;
+        }
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] < array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 检查数组是否满足降序条件
+     *
+     * @param array 被检查数组
+     * @return 是否降序，空数组返回false
+     */
+    public static boolean isSortedDESC(byte[] array) {
+        if (isEmpty(array)) {
+            return false;
+        }
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] < array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 检查数组是否满足降序条件
+     *
+     * @param array 被检查数组
+     * @return 是否降序，空数组返回false
+     */
+    public static boolean isSortedDESC(char[] array) {
+        if (isEmpty(array)) {
+            return false;
+        }
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] < array[i + 1]) {
+                return false;
+            }
+        }
+        return true;
     }
 }

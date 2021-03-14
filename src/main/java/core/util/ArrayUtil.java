@@ -1,5 +1,7 @@
 package core.util;
 
+import java.lang.reflect.Array;
+
 /**
  * @ProjectName: yoTool
  * @Package: core.util
@@ -48,5 +50,37 @@ public class ArrayUtil extends BasicTypeArrayUtil {
         return isEmpty(array) ? defaultArray : array;
     }
 
-    
+    /**
+     * 创建目标元素类型定长数组
+     *
+     * @param typeName 元素类型名称
+     * @param size     数组长度
+     * @param <T>      元素类型
+     * @return 空数组
+     */
+    @SuppressWarnings("unchecked")
+    public static <T> T[] newArray(Class<?> typeName, int size) {
+        return (T[]) Array.newInstance(typeName, size);
+    }
+
+    /**
+     * 拷贝源数组至给定长度新数组中
+     * 源数组长度不足则截断，过长则保留前N位
+     *
+     * @param array    源数组
+     * @param newSize  新数组长
+     * @param typeName 元素类型名称
+     * @param <T>      元素类型
+     * @return 新数组
+     */
+    public static <T> T[] resize(T[] array, int newSize, Class<?> typeName) {
+        if (newSize < 0) {
+            return array;
+        }
+        final T[] newArray = newArray(typeName, newSize);
+        if (newSize > 0 && isNotEmpty(array)) {
+            System.arraycopy(array, 0, newArray, 0, Math.min(array.length, newSize));
+        }
+        return newArray;
+    }
 }
