@@ -213,4 +213,25 @@ public class ArrayUtil extends BasicTypeArrayUtil {
         }
         return Arrays.copyOfRange(array, start, end);
     }
+
+    /**
+     * 交换目标数组中的两个指定元素
+     *
+     * @param array  目标数组
+     * @param index1 指定元素位置1
+     * @param index2 指定元素位置2
+     * @param <T>    元素类型
+     * @return 交换后数组（等价于参数array）
+     */
+    public static <T> T[] swap(T[] array, int index1, int index2) {
+        if (isEmpty(array)) {
+            return array;
+        }
+        T temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
+        return array;
+    }
+
+
 }
