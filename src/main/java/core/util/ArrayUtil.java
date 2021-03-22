@@ -1,6 +1,7 @@
 package core.util;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 /**
  * @ProjectName: yoTool
@@ -82,5 +83,134 @@ public class ArrayUtil extends BasicTypeArrayUtil {
             System.arraycopy(array, 0, newArray, 0, Math.min(array.length, newSize));
         }
         return newArray;
+    }
+
+    /**
+     * 拷贝源数组至给定长度新数组中
+     * 源数组长度不足则截断，过长则保留前N位
+     *
+     * @param array   源数组
+     * @param newSize 新数组长
+     * @param <T>     元素类型
+     * @return 新数组
+     */
+    public static <T> T[] resize(T[] array, int newSize) {
+        return resize(array, newSize, array.getClass().getComponentType());
+    }
+
+    /**
+     * 多数组合并
+     *
+     * @param arrays 多数组
+     * @param <T>    元素类型
+     * @return 合并后新数组
+     */
+    public static <T> T[] addAll(T[]... arrays) {
+        if (arrays.length == 1) {
+            return arrays[0];
+        }
+        int len = 0;
+        for (T[] array : arrays) {
+            if (array != null) {
+                len += array.length;
+            }
+        }
+        final T[] result = newArray(arrays.getClass().getComponentType(), len);
+        len = 0;
+        for (T[] array : arrays) {
+            if (array != null) {
+                System.arraycopy(array, 0, result, len, array.length);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * 返回指定元素在目标数组中首次出现位置
+     * 无目标元素返回{@link #INDEX_OVER}
+     *
+     * @param array 目标数组
+     * @param value 指定元素
+     * @param <T>   元素类型
+     * @return 指定元素在目标数组中首次出现位置, 无目标元素返回{@link #INDEX_OVER}
+     */
+    public static <T> int indexOf(T[] array, T value) {
+        if (isNotEmpty(array)) {
+            for (int i = 0; i < array.length; i++) {
+                if (value == array[i]) {
+                    return i;
+                }
+            }
+        }
+        return INDEX_OVER;
+    }
+
+    /**
+     * 返回指定元素在目标数组中最后出现位置
+     * 无目标元素返回{@link #INDEX_OVER}
+     *
+     * @param array 目标数组
+     * @param value 指定元素
+     * @param <T>   元素类型
+     * @return 指定元素在目标数组中最后出现位置, 无目标元素返回{@link #INDEX_OVER}
+     */
+    public static <T> int lastIndexOf(T[] array, T value) {
+        if (isNotEmpty(array)) {
+            for (int i = array.length - 1; i >= 0; i--) {
+                if (value == array[i]) {
+                    return i;
+                }
+            }
+        }
+        return INDEX_OVER;
+    }
+
+    /**
+     * 检查数组中是否包含指定元素
+     *
+     * @param array 目标数组
+     * @param value 指定元素
+     * @param <T>   元素类型
+     * @return 是否包含
+     */
+    public static <T> boolean contains(T[] array, T value) {
+        return indexOf(array, value) > INDEX_OVER;
+    }
+
+    /**
+     * 提取子数组
+     *
+     * @param array 原始数组
+     * @param start 起始下标
+     * @param end   结束下标+1
+     * @param <T>   元素类型
+     * @return 子数组
+     */
+    public static <T> T[] subArray(T[] array, int start, int end) {
+        if (isEmpty(array)) {
+            return array;
+        }
+        int len = array.length;
+        if (start < 0) {
+            start += len;
+        }
+        if (end < 0) {
+            end += len;
+        }
+        if (start == len) {
+            return newArray(array.getClass().getComponentType(), 0);
+        }
+        if (start > end) {
+            int temp = start;
+            start = end;
+            end = temp;
+        }
+        if (end > len) {
+            if (start >= len) {
+                return newArray(array.getClass().getComponentType(), 0);
+            }
+            end = len;
+        }
+        return Arrays.copyOfRange(array, start, end);
     }
 }
