@@ -57,11 +57,22 @@ public class ArrayUtil extends BasicTypeArrayUtil {
      * @param typeName 元素类型名称
      * @param size     数组长度
      * @param <T>      元素类型
-     * @return 空数组
+     * @return 定长空数组
      */
     @SuppressWarnings("unchecked")
     public static <T> T[] newArray(Class<?> typeName, int size) {
         return (T[]) Array.newInstance(typeName, size);
+    }
+
+    /**
+     * 新建无长度目标元素类型数组
+     *
+     * @param typeName 元素类型名称
+     * @param <T>      元素类型
+     * @return 无长度空数组
+     */
+    public static <T> T[] newArray(Class<?> typeName) {
+        return newArray(typeName, 0);
     }
 
     /**
@@ -233,5 +244,61 @@ public class ArrayUtil extends BasicTypeArrayUtil {
         return array;
     }
 
+    /**
+     * 反转数组
+     *
+     * @param array 原始数组，即结果数组
+     * @param start 开始位置
+     * @param end   结束位置，不包括
+     * @param <T>   元素类型
+     * @return 反转后数组
+     */
+    public static <T> T[] reverse(T[] array, int start, int end) {
+        if (isEmpty(array)) {
+            return array;
+        }
+        int i = Math.max(start, 0);
+        int j = Math.min(array.length, end) - 1;
+        while (j > i) {
+            swap(array, i, j);
+            j--;
+            i++;
+        }
+        return array;
+    }
 
+    /**
+     * 反转数组
+     *
+     * @param array 原始数组
+     * @return 反转后数组
+     */
+    public static <T> T[] reverse(T[] array) {
+        return reverse(array, 0, array.length);
+    }
+
+    /**
+     * 获取数组对象的元素类型
+     *
+     * @param arrayClass 被检查数组
+     * @return 元素类型
+     */
+    public static Class<?> getComponentType(Class<?> arrayClass) {
+        return null == arrayClass ? null : arrayClass.getComponentType();
+    }
+
+    /**
+     * 根据元素类型返回数组类型
+     *
+     * @param componentType 元素类型
+     * @return 指定元素数组类型
+     */
+    public static Class<?> getArrayType(Class<?> componentType) {
+        return newArray(componentType).getClass();
+    }
+
+    public static <T> T[] insert(T[] buffer, int index, T... newElements) {
+        //TODO
+        return null;
+    }
 }
