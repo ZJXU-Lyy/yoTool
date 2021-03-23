@@ -2,6 +2,8 @@ package core.util;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Random;
 
 /**
  * @ProjectName: yoTool
@@ -372,10 +374,66 @@ public class ArrayUtil extends BasicTypeArrayUtil {
      * @param <T>         元素类型
      * @return 新数组
      */
+    @SuppressWarnings("unchecked")
     public static <T> T[] append(T[] array, T... newElements) {
         if (isEmpty(array)) {
             return newElements;
         }
         return insert(array, array.length, newElements);
     }
+
+    /**
+     * 取最小值
+     *
+     * @param numberArray 可排序数组
+     * @param <T>         元素类型
+     * @return 最小值
+     */
+    public static <T extends Comparable<? super T>> T min(T[] numberArray) {
+        return min(numberArray, null);
+    }
+
+    /**
+     * 取最小值
+     *
+     * @param numberArray 可排序数组
+     * @param comparator  比较器
+     * @param <T>         元素类型
+     * @return 最小值
+     */
+    public static <T extends Comparable<? super T>> T min(T[] numberArray, Comparator<T> comparator) {
+        if (isEmpty(numberArray)) {
+            throw new IllegalArgumentException("Number array must not empty !");
+        }
+        T min = numberArray[0];
+        for (T t : numberArray) {
+            /*if (CompareUtil.compare(min, t, comparator) > 0) {
+                min = t;
+            }*/
+        }
+        //TODO
+        return min;
+    }
+
+    /**
+     * 打乱数组顺序，会变更源数组
+     *
+     * @param array  源数组
+     * @param random 随机数生成器
+     * @param <T>    元素类型
+     * @return 无序随机数组
+     */
+    public static <T> T[] shuffle(T[] array, Random random) {
+        if (array == null || random == null || array.length <= 1) {
+            return array;
+        }
+
+        for (int i = array.length; i > 1; i--) {
+            swap(array, i - 1, random.nextInt(i));
+        }
+
+        return array;
+    }
+
+
 }

@@ -32,4 +32,17 @@ public class BooleanUtil {
         TRUE_SET.add("對");
         TRUE_SET.add("√");
     }
+
+    /**
+     * 取相反值
+     *
+     * @param bool Boolean值
+     * @return 对应反值
+     */
+    public static Boolean negate(Boolean bool) {
+        if (bool == null) {
+            return null;
+        }
+        return bool ? Boolean.FALSE : Boolean.TRUE;
+    }
 }
