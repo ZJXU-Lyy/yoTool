@@ -189,6 +189,42 @@ public class ArrayUtil extends BasicTypeArrayUtil {
     }
 
     /**
+     * 检查数组中是否包含若干指定元素中的任意一个
+     *
+     * @param array  目标数组
+     * @param values 若干指定元素
+     * @param <T>    元素类型
+     * @return 是否包含
+     */
+    @SuppressWarnings("unchecked")
+    public static <T> boolean containsAny(T[] array, T... values) {
+        for (T value : values) {
+            if (contains(array, value)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 检查数组是否包含若干指定元素中的所有元素
+     *
+     * @param array  目标数组
+     * @param values 若干指定元素
+     * @param <T>    元素类型
+     * @return 是否包含
+     */
+    @SuppressWarnings("unchecked")
+    public static <T> boolean containsAll(T[] array, T... values) {
+        for (T value : values) {
+            if (!contains(array, value)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
      * 提取子数组
      *
      * @param array 原始数组
@@ -297,8 +333,49 @@ public class ArrayUtil extends BasicTypeArrayUtil {
         return newArray(componentType).getClass();
     }
 
-    public static <T> T[] insert(T[] buffer, int index, T... newElements) {
-        //TODO
-        return null;
+    /**
+     * 在指定位置插入若干指定元素
+     *
+     * @param array       源数组
+     * @param index       插入位置
+     * @param newElements 若干指定元素
+     * @param <T>         元素类型
+     * @return 插入元素后新数组, 不影响源数组结构
+     */
+    @SuppressWarnings({"unchecked"})
+    public static <T> T[] insert(T[] array, int index, T... newElements) {
+        if (isEmpty(newElements)) {
+            return array;
+        }
+        if (isEmpty(array)) {
+            return newElements;
+        }
+        final int len = array.length;
+        if (index < 0) {
+            index = (index % len) + len;
+        }
+        final T[] result = newArray(array.getClass().getComponentType(), Math.max(len, index) + newElements.length);
+        System.arraycopy(array, 0, result, 0, Math.min(len, index));
+        System.arraycopy(newElements, 0, result, index, newElements.length);
+        if (index < len) {
+            System.arraycopy(array, index, result, index + newElements.length, len - index);
+        }
+        return result;
+    }
+
+    /**
+     * 在源数组末尾添加若干指定元素
+     * 并返回一个新的数组，不影响源数组结构
+     *
+     * @param array       源数组
+     * @param newElements 若干指定元素
+     * @param <T>         元素类型
+     * @return 新数组
+     */
+    public static <T> T[] append(T[] array, T... newElements) {
+        if (isEmpty(array)) {
+            return newElements;
+        }
+        return insert(array, array.length, newElements);
     }
 }
