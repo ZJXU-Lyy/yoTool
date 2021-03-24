@@ -262,6 +262,12 @@ public class BooleanUtil {
         return bool ? trueString : falseString;
     }
 
+    /**
+     * 若干boolean值相与
+     *
+     * @param array 若干boolean值
+     * @return 相与结果
+     */
     public static boolean and(boolean... array) {
         if (ArrayUtil.isEmpty(array)) {
             throw new IllegalArgumentException("The Array must not be empty !");
@@ -272,5 +278,103 @@ public class BooleanUtil {
             }
         }
         return true;
+    }
+
+    /**
+     * 若干Boolean值相与
+     *
+     * @param array 若干Boolean值
+     * @return 相与结果
+     */
+    public static Boolean andOfWrap(Boolean... array) {
+        if (ArrayUtil.isEmpty(array)) {
+            throw new IllegalArgumentException("The Array must not be empty !");
+        }
+        final boolean[] primitive = new boolean[array.length];
+        for (int i = 0; i < array.length; i++) {
+            primitive[i] = array[i];
+        }
+        return and(primitive);
+    }
+
+    /**
+     * 若干boolean值相或
+     *
+     * @param array 若干boolean值
+     * @return 相或结果
+     */
+    public static boolean or(boolean... array) {
+        if (ArrayUtil.isEmpty(array)) {
+            throw new IllegalArgumentException("The Array must not be empty !");
+        }
+        for (final boolean element : array) {
+            if (element) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 若干Boolean值相或
+     *
+     * @param array 若干Boolean值
+     * @return 相或结果
+     */
+    public static Boolean orOfWrap(Boolean... array) {
+        if (ArrayUtil.isEmpty(array)) {
+            throw new IllegalArgumentException("The Array must not be empty !");
+        }
+        final boolean[] primitive = new boolean[array.length];
+        for (int i = 0; i < array.length; i++) {
+            primitive[i] = array[i];
+        }
+        return or(primitive);
+    }
+
+    /**
+     * 若干boolean值异或
+     *
+     * @param array 若干boolean值
+     * @return 异或结果
+     */
+    public static boolean xor(boolean... array) {
+        if (ArrayUtil.isEmpty(array)) {
+            throw new IllegalArgumentException("The Array must not be empty");
+        }
+
+        boolean result = false;
+        for (final boolean element : array) {
+            result ^= element;
+        }
+
+        return result;
+    }
+
+    /**
+     * 若干Boolean值异或
+     *
+     * @param array 若干Boolean值
+     * @return 异或结果
+     */
+    public static Boolean xorOfWrap(Boolean... array) {
+        if (ArrayUtil.isEmpty(array)) {
+            throw new IllegalArgumentException("The Array must not be empty !");
+        }
+        final boolean[] primitive = new boolean[array.length];
+        for (int i = 0; i < array.length; i++) {
+            primitive[i] = array[i];
+        }
+        return xor(primitive);
+    }
+
+    /**
+     * 检查目标类是否为boolean类型及其包装类
+     *
+     * @param clz 目标类
+     * @return 是否为boolean类型及其包装类
+     */
+    public static boolean isBoolean(Class<?> clz) {
+        return (clz == Boolean.class) || (clz == boolean.class);
     }
 }
